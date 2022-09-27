@@ -40,8 +40,6 @@ if __name__ == '__main__':
     client.on_message = on_message
     client.on_publish = on_publish
 
-    #client.tls_set('root.ca', certfile='c1.crt', keyfile='c1.key')
     client.connect(MQ_SERVER,MQ_PORT, 60)
 
-while True:
-    client.loop()
+    client.loop_forever()
