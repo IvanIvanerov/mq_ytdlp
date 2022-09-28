@@ -10,6 +10,7 @@ MQ_PORT = 1883
 ydl_opts = {
         'format': 'bv[height=1080][ext=mp4]+ba[ext=m4a]/best[height<=1080][ext=mp4]/best',
         'outtmpl': sys.argv[3]+'/%(uploader)s/%(title)s.%(ext)s',
+        'ffmpeg_location' : '/usr/local/bun/ffmpeg'
         'cachedir': False,
         'logtostderr': True
         }
