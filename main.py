@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import json
+import uuid
 import sys
 import base64
 from yt_dlp import YoutubeDL
@@ -9,9 +10,10 @@ MQ_SERVER = sys.argv[1]
 MQ_PORT = 1883
 ydl_opts = {
         'format': 'bv[height<=1080][ext=mp4]+ba[ext=m4a]/best[height<=1080][ext=mp4]/best',
-        'outtmpl': sys.argv[3]+'/%(uploader)s/%(title)s.%(ext)s',
+        # 'outtmpl': sys.argv[3]+'/%(uploader)s/%(title)s.%(ext)s',
         'ffmpeg_location' : '/usr/local/bin/ffmpeg',
-        'restrictfilenames' : True,
+        'outtmpl': sys.argv[3]+'/%(uploader)s/'+str(uuid.uuidv4())+'.mp4',
+        # 'restrictfilenames' : True,
         'cachedir': False,
         'logtostderr': True
         }
