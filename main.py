@@ -8,7 +8,7 @@ MQ_TOPIC = sys.argv[2]
 MQ_SERVER = sys.argv[1]
 MQ_PORT = 1883
 ydl_opts = {
-        'format': 'best[height=1080][ext=mp4]/best[height<=1080][ext=mp4]/best',
+        'format': 'bv[height=1080][ext=mp4]+ba[ext=m4a]/best[height<=1080][ext=mp4]/best',
         'outtmpl': sys.argv[3]+'/%(uploader)s/%(title)s.%(ext)s',
         'cachedir': False,
         'logtostderr': True
