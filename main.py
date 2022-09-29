@@ -14,7 +14,8 @@ ydl_opts = {
         'ffmpeg_location' : '/usr/local/bin/ffmpeg',
         'outtmpl': sys.argv[3]+'/%(uploader)s/'+str(uuid.uuid4())+'.mp4',
         # 'restrictfilenames' : True,
-        'cachedir': False,
+        # 'cachedir': False,
+        'cachedir': '/tmp',
         'logtostderr': True
         }
 
