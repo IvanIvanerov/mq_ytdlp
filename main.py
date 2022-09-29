@@ -15,7 +15,10 @@ ydl_opts = {
         'outtmpl': sys.argv[3]+'/%(uploader)s/'+str(uuid.uuid4())+'.mp4',
         # 'restrictfilenames' : True,
         # 'cachedir': False,
-        'cachedir': '/tmp',
+        'merge_output_format': 'mp4',
+        'noplaylist': True,
+        'continue_dl': True,
+        'cachedir': '/tmp/',
         'logtostderr': True
         }
 
